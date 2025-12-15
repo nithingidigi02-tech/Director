@@ -5,16 +5,18 @@
 <title>Nithin G – Director – Feature Film Concept</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Ambient Background Canvas -->
+<!-- Lottie -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+
 <canvas id="ambient"></canvas>
 
 <style>
 :root{
   --bg:#05070d;
   --card:#0e1424;
-  --text:#cfd6e6;          /* softer main text */
+  --text:#cfd6e6;
   --muted:#8b93b8;
-  --accent:#8fb8d8;        /* reduced brightness */
+  --accent:#8fb8d8;
   --gold:#d6b36a;
 }
 
@@ -25,109 +27,58 @@ body{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
   background:radial-gradient(circle at top,#0b1122,#04060b 70%);
   color:var(--text);
-  -webkit-font-smoothing:antialiased;
 }
 
 #ambient{
   position:fixed;
   inset:0;
-  z-index:-1;
-  opacity:0.35; /* reduced animation intensity */
+  z-index:-2;
+  opacity:0.35;
 }
 
 .wrapper{
   max-width:820px;
   margin:auto;
-  padding:26px 18px 72px;
+  padding:26px 18px 120px;
 }
 
-.header{
-  text-align:center;
-  margin-bottom:36px;
-}
+.header{text-align:center;margin-bottom:36px}
+.header h1{margin:0;font-size:21px;font-weight:500}
+.header .sub{font-size:13.5px;color:var(--muted)}
 
-.header h1{
-  font-size:21px;
-  font-weight:500;
-  margin:0;
-  color:#c7cfe3;
-}
-
-.header .sub{
-  font-size:13.5px;
-  color:var(--muted);
-  margin-top:6px;
-}
-
-.title{
-  font-size:32px;
-  font-weight:700;
-  text-align:center;
-  letter-spacing:0.6px;
-  margin:36px 0 10px;
-  color:#dde3f2;
-}
-
-.genre{
-  text-align:center;
-  font-size:13.5px;
-  color:var(--gold);
-  margin-bottom:36px;
-}
+.title{text-align:center;font-size:32px;font-weight:700;margin:36px 0 10px}
+.genre{text-align:center;font-size:13.5px;color:var(--gold);margin-bottom:36px}
 
 .card{
   background:linear-gradient(180deg,#101735,#0b1124);
   border-radius:18px;
   padding:22px 20px;
-  margin-bottom:22px;
-  box-shadow:0 8px 24px rgba(0,0,0,0.35);
+  margin-bottom:26px;
 }
 
-h2{
-  font-size:17px;
-  margin:0 0 10px;
-  color:var(--accent);
-  font-weight:600;
+h2{margin:0 0 10px;color:var(--accent);font-size:17px}
+p{margin:0;font-size:15px;line-height:1.85}
+
+.visual{
+  height:160px;
+  margin-bottom:14px;
+  border-radius:14px;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity 1.2s ease, transform 1.2s ease;
 }
 
-p{
-  margin:0;
-  font-size:15px;
-  line-height:1.85;
-  color:var(--text);
-}
-
-.parts{
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-}
-
-.part{
-  background:#0a0f22;
-  border-left:3px solid var(--accent);
-  padding:13px 14px 13px 15px;
-  border-radius:12px;
-  font-size:14.5px;
-  line-height:1.75;
-  color:#cbd2e6;
-}
-
-.part span{
-  color:var(--gold);
-  font-weight:600;
+.visual.visible{
+  opacity:1;
+  transform:none;
 }
 
 .footer{
   text-align:center;
-  margin-top:56px;
+  margin-top:80px;
   font-size:12.5px;
   color:#7f88b0;
-}
-
-@media(min-width:768px){
-  .title{font-size:40px}
-  p,.part{font-size:16px}
 }
 </style>
 </head>
@@ -135,107 +86,104 @@ p{
 <body>
 <div class="wrapper">
 
-  <div class="header">
-    <h1>Nithin G</h1>
-    <div class="sub">Director – Feature Film Concept</div>
-  </div>
+<div class="header">
+  <h1>Nithin G</h1>
+  <div class="sub">Director – Feature Film Concept</div>
+</div>
 
-  <div class="title">REWIND OF THE UNIVERSE</div>
-  <div class="genre">Sci-Fi • Mythology • AI • Consciousness</div>
+<div class="title">REWIND OF THE UNIVERSE</div>
+<div class="genre">Sci-Fi • Mythology • AI • Consciousness</div>
 
-  <div class="card">
-    <h2>Logline</h2>
-    <p>
-      When a forgotten technology from the 1760s resurfaces, humanity unlocks the
-      ability to connect the human brain to the universe itself—triggering a war
-      between souls, artificial intelligence, governments, and the creators of
-      existence. As reality collapses, one man becomes the final link between God
-      and a reborn universe.
-    </p>
-  </div>
+<div class="card">
+<h2>Logline</h2>
+<p>When a forgotten technology from the 1760s resurfaces, humanity unlocks the ability to connect the human brain to the universe itself—triggering a war between souls, artificial intelligence, governments, and the creators of existence.</p>
+</div>
 
-  <div class="card">
-    <h2>Synopsis</h2>
-    <p>
-      “Rewind of the Universe” explores life after death, cosmic consciousness,
-      divine creation, and hidden technology. What begins as scientific discovery
-      evolves into a universal collapse involving AI, souls, God, and a single
-      human destined to witness the end—and the rebirth—of existence itself.
-    </p>
-  </div>
+<!-- PART 1 -->
+<div class="card">
+<div class="visual" data-lottie="https://assets9.lottiefiles.com/packages/lf20_jcikwtux.json"></div>
+<h2>Part 1 – Universe</h2>
+<p>Souls exist after death in a parallel realm, silently influencing the living.</p>
+</div>
 
-  <div class="card">
-    <h2>Story Breakdown</h2>
-    <div class="parts">
-      <div class="part"><span>Part 1 – Universe:</span> Souls exist after death in a parallel realm influencing the living.</div>
-      <div class="part"><span>Part 2 – Brain:</span> An ancient invention connects the human brain to the universe of souls.</div>
-      <div class="part"><span>Part 3 – Government:</span> A hidden authority manipulates destiny through soul access.</div>
-      <div class="part"><span>Part 4 – Corporate:</span> Artificial intelligence battles souls for control.</div>
-      <div class="part"><span>Part 5 – God:</span> God intervenes, revealing the truth of creation.</div>
-      <div class="part"><span>Part 6 – Man:</span> One human survives the collapse of all universes.</div>
-      <div class="part"><span>Part 7 – World:</span> Earth, time, and reality dissolve.</div>
-      <div class="part"><span>Part 8 – New Universe:</span> God creates a pure world without technology.</div>
-      <div class="part"><span>Part 9 – Rewind:</span> Time rewinds—except for one man.</div>
-      <div class="part"><span>Part 10 – The End:</span> A temple is built to preserve the truth of the past universe.</div>
-    </div>
-  </div>
+<!-- PART 2 -->
+<div class="card">
+<div class="visual" data-lottie="https://assets3.lottiefiles.com/packages/lf20_xlmz9xwm.json"></div>
+<h2>Part 2 – Brain</h2>
+<p>An ancient invention connects the human brain to the universe of souls.</p>
+</div>
 
-  <div class="footer">
-    © Concept Universe by Nithin G
-  </div>
+<!-- PART 3 -->
+<div class="card">
+<div class="visual" data-lottie="https://assets2.lottiefiles.com/packages/lf20_kkflmtur.json"></div>
+<h2>Part 3 – Government</h2>
+<p>A hidden authority manipulates destiny through soul access.</p>
+</div>
+
+<!-- PART 4 -->
+<div class="card">
+<div class="visual" data-lottie="https://assets6.lottiefiles.com/packages/lf20_w51pcehl.json"></div>
+<h2>Part 4 – AI vs Souls</h2>
+<p>Artificial intelligence battles souls for control of reality.</p>
+</div>
+
+<!-- PART 5 -->
+<div class="card">
+<div class="visual" data-lottie="https://assets10.lottiefiles.com/packages/lf20_touohxv0.json"></div>
+<h2>Part 5 – God</h2>
+<p>God intervenes and reveals the truth of creation.</p>
+</div>
+
+<!-- FINAL COLLAPSE -->
+<div class="card">
+<div class="visual visible" id="collapse"></div>
+<h2>Final Collapse</h2>
+<p>The universe contracts into silence. Time rewinds.</p>
+</div>
+
+<div class="footer">© Concept Universe by Nithin G</div>
 
 </div>
 
-<!-- Ambient Animation Script (Softened) -->
+<!-- Ambient particles -->
 <script>
-const canvas = document.getElementById("ambient");
-const ctx = canvas.getContext("2d");
+const c=document.getElementById("ambient"),x=c.getContext("2d");let w,h,p=[];
+function r(){w=c.width=innerWidth;h=c.height=innerHeight}
+addEventListener("resize",r);r();
+for(let i=0;i<80;i++)p.push({x:Math.random()*w,y:Math.random()*h,v:(Math.random()-.5)*.2});
+(function a(){
+x.clearRect(0,0,w,h);
+p.forEach(o=>{o.y+=o.v;o.y>h&&(o.y=0);x.fillStyle="rgba(143,184,216,.15)";x.fillRect(o.x,o.y,2,2)});
+requestAnimationFrame(a)
+})();
+</script>
 
-let w,h,particles=[];
-
-function resize(){
-  w = canvas.width = window.innerWidth;
-  h = canvas.height = window.innerHeight;
+<!-- Lottie + Scroll Sync -->
+<script>
+const visuals=document.querySelectorAll(".visual");
+const io=new IntersectionObserver(e=>{
+e.forEach(v=>{
+if(v.isIntersecting){
+v.target.classList.add("visible");
+const src=v.target.dataset.lottie;
+if(src&&!v.target.anim){
+v.target.anim=lottie.loadAnimation({
+container:v.target,renderer:"svg",loop:true,autoplay:true,path:src
+});
 }
-window.addEventListener("resize", resize);
-resize();
-
-class Particle{
-  constructor(){this.reset()}
-  reset(){
-    this.x = Math.random()*w;
-    this.y = Math.random()*h;
-    this.r = Math.random()*1.4 + 0.3;
-    this.vx = (Math.random()-0.5)*0.1;
-    this.vy = (Math.random()-0.5)*0.1;
-    this.a = Math.random()*0.35 + 0.1;
-  }
-  update(){
-    this.x += this.vx;
-    this.y += this.vy;
-    if(this.x<0||this.x>w||this.y<0||this.y>h) this.reset();
-  }
-  draw(){
-    ctx.beginPath();
-    ctx.arc(this.x,this.y,this.r,0,Math.PI*2);
-    ctx.fillStyle = `rgba(143,184,216,${this.a})`;
-    ctx.fill();
-  }
 }
+});
+},{threshold:.4});
+visuals.forEach(v=>io.observe(v));
 
-function init(){
-  particles=[];
-  const count = Math.min(90, Math.floor(w*h/15000));
-  for(let i=0;i<count;i++) particles.push(new Particle());
-}
-init();
-
-function animate(){
-  ctx.clearRect(0,0,w,h);
-  particles.forEach(p=>{p.update();p.draw();});
-  requestAnimationFrame(animate);
-}
-animate();
+/* Final collapse animation */
+lottie.loadAnimation({
+container:document.getElementById("collapse"),
+renderer:"svg",
+loop:true,
+autoplay:true,
+path:"https://assets1.lottiefiles.com/packages/lf20_qp1q7mct.json"
+});
 </script>
 
 </body>
