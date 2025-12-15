@@ -2,17 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Nithin G – Director – Feature Film Concept</title>
+<title>REWIND OF THE UNIVERSE – Nithin G</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Lottie Engine -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
-
-<canvas id="ambient"></canvas>
 
 <style>
 :root{
-  --bg:#05070d;
+  --bg:#06080f;
   --card:#0e1424;
   --text:#cfd6e6;
   --muted:#8b93b8;
@@ -27,63 +22,96 @@ body{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
   background:radial-gradient(circle at top,#0b1122,#04060b 70%);
   color:var(--text);
+  overflow-x:hidden;
 }
 
-#ambient{
+canvas{
   position:fixed;
   inset:0;
-  z-index:-2;
-  opacity:0.3;
+  z-index:-1;
 }
 
 .wrapper{
-  max-width:820px;
+  max-width:900px;
   margin:auto;
-  padding:26px 18px 120px;
+  padding:28px 18px 90px;
 }
 
-.header{text-align:center;margin-bottom:36px}
-.header h1{margin:0;font-size:21px;font-weight:500}
-.header .sub{font-size:13.5px;color:var(--muted)}
+.header{
+  text-align:center;
+  margin-bottom:40px;
+}
 
-.title{text-align:center;font-size:32px;font-weight:700;margin:36px 0 10px}
-.genre{text-align:center;font-size:13.5px;color:var(--gold);margin-bottom:36px}
+.header h1{
+  font-size:22px;
+  font-weight:500;
+  margin:0;
+}
+
+.header .sub{
+  font-size:14px;
+  color:var(--muted);
+  margin-top:6px;
+}
+
+.title{
+  text-align:center;
+  font-size:36px;
+  font-weight:800;
+  letter-spacing:1px;
+  margin:30px 0 10px;
+}
+
+.meta{
+  text-align:center;
+  font-size:14px;
+  color:var(--gold);
+  margin-bottom:36px;
+}
 
 .card{
   background:linear-gradient(180deg,#101735,#0b1124);
   border-radius:18px;
   padding:22px 20px;
-  margin-bottom:30px;
+  margin-bottom:26px;
+  box-shadow:0 8px 26px rgba(0,0,0,.35);
 }
 
-h2{margin:0 0 10px;color:var(--accent);font-size:17px}
-p{margin:0;font-size:15px;line-height:1.85}
-
-.visual{
-  height:160px;
-  margin-bottom:16px;
-  border-radius:14px;
-  overflow:hidden;
-  opacity:0;
-  transform:translateY(24px);
-  transition:opacity 1.2s ease, transform 1.2s ease;
+h2{
+  margin:0 0 12px;
+  font-size:18px;
+  color:var(--accent);
 }
 
-.visual.visible{
-  opacity:1;
-  transform:none;
+p, li{
+  font-size:15px;
+  line-height:1.85;
+}
+
+ul{
+  padding-left:18px;
+  margin:10px 0;
 }
 
 .footer{
   text-align:center;
-  margin-top:90px;
-  font-size:12.5px;
+  margin-top:70px;
+  font-size:13px;
   color:#7f88b0;
+}
+
+@media(min-width:768px){
+  .title{font-size:44px}
+  p,li{font-size:16px}
 }
 </style>
 </head>
 
 <body>
+
+<!-- Rotating Globe Canvas -->
+<canvas id="globe"></canvas>
+
 <div class="wrapper">
 
 <div class="header">
@@ -92,116 +120,142 @@ p{margin:0;font-size:15px;line-height:1.85}
 </div>
 
 <div class="title">REWIND OF THE UNIVERSE</div>
-<div class="genre">Sci-Fi • Mythology • AI • Consciousness</div>
 
-<!-- PART 1 -->
+<div class="meta">
+  Sci-Fi | Thriller | Mythological Fiction | Psychological<br>
+  10-Part Series / Feature Film Concept • Epic • Philosophical • High-Stakes
+</div>
+
 <div class="card">
-  <div class="visual" data-lottie="https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json"></div>
-  <h2>Part 1 – Universe (Souls After Death)</h2>
-  <p>Every soul continues in a parallel universe—watching, influencing, waiting.</p>
+<h2>LOGLINE</h2>
+<p>
+When a forgotten secret technology from the 1760s resurfaces, humanity discovers the ability to connect the human brain to the universe itself—unleashing a war between souls, AI, governments, corporations, and the very creators of existence. As the world collapses, one man becomes the last surviving link between God and a reborn universe.
+</p>
 </div>
 
-<!-- PART 2 -->
 <div class="card">
-  <div class="visual" data-lottie="https://assets6.lottiefiles.com/packages/lf20_xlmz9xwm.json"></div>
-  <h2>Part 2 – Brain (The Connection)</h2>
-  <p>An ancient invention links the human brain directly to the soul universe.</p>
+<h2>SYNOPSIS (High Level)</h2>
+<p>
+“Rewind of the Universe” explores the intersection of cosmic mystery, human consciousness, divine creation, and hidden technology.
+A long-hidden invention from the 1760s is revealed—technology capable of recreating the universe.
+What begins as scientific curiosity spirals into a cataclysmic chain of events involving Governments, AI Corporations, Souls, God, and one Human destined to survive the end of existence.
+</p>
 </div>
 
-<!-- PART 3 -->
 <div class="card">
-  <div class="visual" data-lottie="https://assets3.lottiefiles.com/packages/lf20_kkflmtur.json"></div>
-  <h2>Part 3 – Government (Control)</h2>
-  <p>A hidden global authority manipulates destiny by accessing souls.</p>
+<h2>PART-BY-PART BREAKDOWN</h2>
+
+<p><strong>Part 1: Universe – Souls After Death</strong><br>
+A secret cosmic truth is revealed: every soul lives on in an unseen parallel universe, waiting, watching, and influencing human life. This realm becomes the battlefield for everything that follows.</p><br>
+
+<p><strong>Part 2: Brain – The Connection</strong><br>
+Scientists unlock an ancient, hidden 1760s invention—technology that can connect the human brain directly to the Universe of Souls. This breakthrough breaks the boundary between life and afterlife.</p><br>
+
+<p><strong>Part 3: Government – Controlled by “GILF”</strong><br>
+A mysterious global authority called GILF seizes control of the technology.</p>
+<ul>
+<li>access souls</li>
+<li>alter destiny</li>
+<li>install a new world order</li>
+</ul>
+<p>Governments become puppets of a larger unseen power.</p><br>
+
+<p><strong>Part 4: Corporate – AI vs Souls</strong><br>
+A powerful corporate AI gains access to the soul-universe and begins fighting souls for dominance. Machines want control. Souls want freedom. Humans are caught in the crossfire.</p><br>
+
+<p><strong>Part 5: God – Created Man</strong><br>
+When the balance of universes collapses, God Himself intervenes. The truth of creation, the structure of universes, and the purpose of humanity are revealed.</p><br>
+
+<p><strong>Part 6: Man – One Human Exists</strong><br>
+The end begins. AI, souls, governments, technology—everything collapses. Only one human remains alive. He becomes the key to the next universe.</p><br>
+
+<p><strong>Part 7: World – The End</strong><br>
+The Earth tears apart. Time breaks. Reality dissolves. This is not destruction — this is reset.</p><br>
+
+<p><strong>Part 8: New Universe – God Rules Again</strong><br>
+A fresh universe is born from divine intervention. A world with no technology, no AI, no governments—only God's pure law.</p><br>
+
+<p><strong>Part 9: Rewind – Except Man</strong><br>
+God rewinds the timeline of the new universe—but leaves one man outside the rewind. He becomes the carrier of knowledge from the old universe.</p><br>
+
+<p><strong>Part 10: The End – Temple Build</strong><br>
+The last man builds a sacred temple, containing the truth of the previous universe. Inside lies the story of everything that happened—waiting to be discovered thousands of years later. This temple becomes the origin of the next civilization.</p>
 </div>
 
-<!-- PART 4 -->
 <div class="card">
-  <div class="visual" data-lottie="https://assets10.lottiefiles.com/packages/lf20_w51pcehl.json"></div>
-  <h2>Part 4 – Corporate (AI vs Souls)</h2>
-  <p>Artificial intelligence invades the soul universe, seeking domination.</p>
+<h2>UNIQUE SELLING POINTS (USP)</h2>
+<ul>
+<li>Never-before-seen mix of science, spirituality, AI, and cosmic mythology</li>
+<li>Universal themes: life after death, purpose of humanity, power of creation</li>
+<li>High visual potential: multiple universes, soul-world, cosmic collapses, divine architecture</li>
+<li>Strong emotional core centered around one final human</li>
+<li>Rich opportunity for sequels, prequels, or expanded universe</li>
+</ul>
 </div>
 
-<!-- PART 5 -->
 <div class="card">
-  <div class="visual" data-lottie="https://assets1.lottiefiles.com/packages/lf20_touohxv0.json"></div>
-  <h2>Part 5 – God (Creation Revealed)</h2>
-  <p>God intervenes and reveals the true structure of existence.</p>
+<h2>TARGET AUDIENCE</h2>
+<ul>
+<li>Global audience that enjoys epic, philosophical storytelling</li>
+<li>Fans of large-scale world-building and mythic-scientific universes</li>
+<li>Viewers aged 16–55 who enjoy thought-provoking sci-fi</li>
+</ul>
 </div>
 
-<!-- PART 6 -->
-<div class="card">
-  <div class="visual" data-lottie="https://assets5.lottiefiles.com/packages/lf20_zrqthn6o.json"></div>
-  <h2>Part 6 – Man (The Last Human)</h2>
-  <p>Only one human survives—the bridge between universes.</p>
+<div class="footer">
+© Feature Film Concept by Nithin G
 </div>
 
-<!-- PART 7 -->
-<div class="card">
-  <div class="visual" data-lottie="https://assets4.lottiefiles.com/packages/lf20_qp1q7mct.json"></div>
-  <h2>Part 7 – World (The End)</h2>
-  <p>Earth, time, and reality collapse into nothingness.</p>
 </div>
 
-<!-- PART 8 -->
-<div class="card">
-  <div class="visual" data-lottie="https://assets9.lottiefiles.com/packages/lf20_2znxgjyt.json"></div>
-  <h2>Part 8 – New Universe</h2>
-  <p>A new universe is born—without technology, under divine law.</p>
-</div>
-
-<!-- PART 9 -->
-<div class="card">
-  <div class="visual" data-lottie="https://assets8.lottiefiles.com/packages/lf20_cy2xwq.json"></div>
-  <h2>Part 9 – Rewind (Except Man)</h2>
-  <p>Time rewinds for all—but one man remains outside the loop.</p>
-</div>
-
-<!-- PART 10 -->
-<div class="card">
-  <div class="visual" data-lottie="https://assets7.lottiefiles.com/packages/lf20_lx7zbl.json"></div>
-  <h2>Part 10 – Temple (The Origin)</h2>
-  <p>The final man builds a temple preserving the truth of existence.</p>
-</div>
-
-<div class="footer">© Concept Universe by Nithin G</div>
-</div>
-
-<!-- Ambient background -->
+<!-- Rotating Globe Script -->
 <script>
-const c=document.getElementById("ambient"),x=c.getContext("2d");
-let w,h,p=[];
-function r(){w=c.width=innerWidth;h=c.height=innerHeight}
-addEventListener("resize",r);r();
-for(let i=0;i<70;i++)p.push({x:Math.random()*w,y:Math.random()*h,v:(Math.random()-.5)*.15});
-(function a(){
-x.clearRect(0,0,w,h);
-p.forEach(o=>{o.y+=o.v;o.y>h&&(o.y=0);x.fillStyle="rgba(143,184,216,.14)";x.fillRect(o.x,o.y,2,2)});
-requestAnimationFrame(a)
-})();
-</script>
+const canvas = document.getElementById("globe");
+const ctx = canvas.getContext("2d");
+let w,h,points=[];
 
-<!-- Scroll-synced Lottie -->
-<script>
-const visuals=document.querySelectorAll(".visual");
-const io=new IntersectionObserver(entries=>{
-entries.forEach(e=>{
-if(e.isIntersecting){
-e.target.classList.add("visible");
-if(!e.target.anim){
-e.target.anim=lottie.loadAnimation({
-container:e.target,
-renderer:"svg",
-loop:true,
-autoplay:true,
-path:e.target.dataset.lottie
-});
+function resize(){
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
 }
+window.addEventListener("resize", resize);
+resize();
+
+const R = Math.min(w,h)/3;
+const cx = w/2;
+const cy = h/2;
+
+for(let i=0;i<500;i++){
+  const theta = Math.random()*2*Math.PI;
+  const phi = Math.acos(2*Math.random()-1);
+  points.push({theta,phi});
 }
-});
-},{threshold:0.45});
-visuals.forEach(v=>io.observe(v));
+
+let rot = 0;
+
+function draw(){
+  ctx.clearRect(0,0,w,h);
+  rot += 0.0015;
+
+  points.forEach(p=>{
+    const x = R * Math.sin(p.phi) * Math.cos(p.theta + rot);
+    const y = R * Math.cos(p.phi);
+    const z = R * Math.sin(p.phi) * Math.sin(p.theta + rot);
+
+    const scale = (z+R)/(2*R);
+    const px = cx + x;
+    const py = cy + y;
+
+    ctx.fillStyle = `rgba(143,184,216,${0.15+scale*0.3})`;
+    ctx.beginPath();
+    ctx.arc(px,py,1.2,0,Math.PI*2);
+    ctx.fill();
+  });
+
+  requestAnimationFrame(draw);
+}
+draw();
 </script>
 
 </body>
-</html>
+  </html>
