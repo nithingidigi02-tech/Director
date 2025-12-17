@@ -2,260 +2,197 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>REWIND OF THE UNIVERSE – Nithin G</title>
+<title>AI Movie Platform — Visual Engine</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-:root{
-  --bg:#06080f;
-  --card:#0e1424;
-  --text:#cfd6e6;
-  --muted:#8b93b8;
-  --accent:#8fb8d8;
-  --gold:#d6b36a;
-}
-
-*{box-sizing:border-box}
-
 body{
   margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  background:radial-gradient(circle at top,#0b1122,#04060b 70%);
-  color:var(--text);
-  overflow-x:hidden;
+  font-family:system-ui;
+  background:#020617;
+  color:#e5e7eb;
 }
-
-canvas{
-  position:fixed;
-  inset:0;
-  z-index:-1;
-}
-
-.wrapper{
-  max-width:900px;
-  margin:auto;
-  padding:28px 18px 90px;
-}
-
-.header{
+header{
+  padding:16px;
   text-align:center;
-  margin-bottom:40px;
-}
-
-.header h1{
   font-size:22px;
-  font-weight:500;
-  margin:0;
+  font-weight:700;
+  background:linear-gradient(90deg,#4f46e5,#6366f1);
 }
-
-.header .sub{
-  font-size:14px;
-  color:var(--muted);
-  margin-top:6px;
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
 }
-
-.title{
-  text-align:center;
-  font-size:36px;
-  font-weight:800;
-  letter-spacing:1px;
-  margin:30px 0 10px;
-}
-
-.meta{
-  text-align:center;
-  font-size:14px;
-  color:var(--gold);
-  margin-bottom:36px;
-}
-
 .card{
-  background:linear-gradient(180deg,#101735,#0b1124);
-  border-radius:18px;
-  padding:22px 20px;
-  margin-bottom:26px;
-  box-shadow:0 8px 26px rgba(0,0,0,.35);
+  background:#111827;
+  border-radius:16px;
+  padding:20px;
+  margin-bottom:20px;
 }
-
-h2{
-  margin:0 0 12px;
-  font-size:18px;
-  color:var(--accent);
+textarea,select,button{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border-radius:10px;
+  border:none;
+  background:#020617;
+  color:#fff;
 }
-
-p, li{
-  font-size:15px;
-  line-height:1.85;
+button{
+  background:#6366f1;
+  font-weight:600;
+  cursor:pointer;
 }
-
-ul{
-  padding-left:18px;
-  margin:10px 0;
+.pipeline{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:10px;
 }
-
-.footer{
+.step{
+  background:#020617;
+  padding:10px;
+  border-radius:10px;
   text-align:center;
-  margin-top:70px;
   font-size:13px;
-  color:#7f88b0;
 }
-
-@media(min-width:768px){
-  .title{font-size:44px}
-  p,li{font-size:16px}
+.active{background:#4f46e5}
+canvas{
+  width:100%;
+  height:300px;
+  background:#000;
+  border-radius:14px;
+}
+pre{
+  background:#020617;
+  padding:16px;
+  border-radius:12px;
+  white-space:pre-wrap;
+  font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Rotating Globe Canvas -->
-<canvas id="globe"></canvas>
+<header>🎬 AI Movie Platform — Visual Director Engine</header>
 
-<div class="wrapper">
+<div class="container">
 
-<div class="header">
-  <h1>Nithin G</h1>
-  <div class="sub">Director – Feature Film Concept</div>
-</div>
-
-<div class="title">REWIND OF THE UNIVERSE</div>
-
-<div class="meta">
-  Sci-Fi | Thriller | Mythological Fiction | Psychological<br>
-  10-Part Series / Feature Film Concept • Epic • Philosophical • High-Stakes
+<div class="card">
+  <textarea id="idea" placeholder="Enter movie idea..."></textarea>
+  <select id="genre">
+    <option>Sci-Fi</option>
+    <option>Thriller</option>
+    <option>Mythological</option>
+  </select>
+  <button onclick="createMovie()">Create Movie</button>
 </div>
 
 <div class="card">
-<h2>LOGLINE</h2>
-<p>
-When a forgotten secret technology from the 1760s resurfaces, humanity discovers the ability to connect the human brain to the universe itself—unleashing a war between souls, AI, governments, corporations, and the very creators of existence. As the world collapses, one man becomes the last surviving link between God and a reborn universe.
-</p>
+  <h3>Production Pipeline</h3>
+  <div class="pipeline" id="pipeline">
+    <div class="step">Story</div>
+    <div class="step">Characters</div>
+    <div class="step">Scenes</div>
+    <div class="step">Dialogue</div>
+    <div class="step">Music</div>
+    <div class="step">Director</div>
+    <div class="step">Editor</div>
+    <div class="step">Final</div>
+  </div>
 </div>
 
 <div class="card">
-<h2>SYNOPSIS (High Level)</h2>
-<p>
-“Rewind of the Universe” explores the intersection of cosmic mystery, human consciousness, divine creation, and hidden technology.
-A long-hidden invention from the 1760s is revealed—technology capable of recreating the universe.
-What begins as scientific curiosity spirals into a cataclysmic chain of events involving Governments, AI Corporations, Souls, God, and one Human destined to survive the end of existence.
-</p>
+  <h3>Scene Visualizer</h3>
+  <canvas id="sceneCanvas" width="900" height="300"></canvas>
 </div>
 
 <div class="card">
-<h2>PART-BY-PART BREAKDOWN</h2>
-
-<p><strong>Part 1: Universe – Souls After Death</strong><br>
-A secret cosmic truth is revealed: every soul lives on in an unseen parallel universe, waiting, watching, and influencing human life. This realm becomes the battlefield for everything that follows.</p><br>
-
-<p><strong>Part 2: Brain – The Connection</strong><br>
-Scientists unlock an ancient, hidden 1760s invention—technology that can connect the human brain directly to the Universe of Souls. This breakthrough breaks the boundary between life and afterlife.</p><br>
-
-<p><strong>Part 3: Government – Controlled by “GILF”</strong><br>
-A mysterious global authority called GILF seizes control of the technology.</p>
-<ul>
-<li>access souls</li>
-<li>alter destiny</li>
-<li>install a new world order</li>
-</ul>
-<p>Governments become puppets of a larger unseen power.</p><br>
-
-<p><strong>Part 4: Corporate – AI vs Souls</strong><br>
-A powerful corporate AI gains access to the soul-universe and begins fighting souls for dominance. Machines want control. Souls want freedom. Humans are caught in the crossfire.</p><br>
-
-<p><strong>Part 5: God – Created Man</strong><br>
-When the balance of universes collapses, God Himself intervenes. The truth of creation, the structure of universes, and the purpose of humanity are revealed.</p><br>
-
-<p><strong>Part 6: Man – One Human Exists</strong><br>
-The end begins. AI, souls, governments, technology—everything collapses. Only one human remains alive. He becomes the key to the next universe.</p><br>
-
-<p><strong>Part 7: World – The End</strong><br>
-The Earth tears apart. Time breaks. Reality dissolves. This is not destruction — this is reset.</p><br>
-
-<p><strong>Part 8: New Universe – God Rules Again</strong><br>
-A fresh universe is born from divine intervention. A world with no technology, no AI, no governments—only God's pure law.</p><br>
-
-<p><strong>Part 9: Rewind – Except Man</strong><br>
-God rewinds the timeline of the new universe—but leaves one man outside the rewind. He becomes the carrier of knowledge from the old universe.</p><br>
-
-<p><strong>Part 10: The End – Temple Build</strong><br>
-The last man builds a sacred temple, containing the truth of the previous universe. Inside lies the story of everything that happened—waiting to be discovered thousands of years later. This temple becomes the origin of the next civilization.</p>
-</div>
-
-<div class="card">
-<h2>UNIQUE SELLING POINTS (USP)</h2>
-<ul>
-<li>Never-before-seen mix of science, spirituality, AI, and cosmic mythology</li>
-<li>Universal themes: life after death, purpose of humanity, power of creation</li>
-<li>High visual potential: multiple universes, soul-world, cosmic collapses, divine architecture</li>
-<li>Strong emotional core centered around one final human</li>
-<li>Rich opportunity for sequels, prequels, or expanded universe</li>
-</ul>
-</div>
-
-<div class="card">
-<h2>TARGET AUDIENCE</h2>
-<ul>
-<li>Global audience that enjoys epic, philosophical storytelling</li>
-<li>Fans of large-scale world-building and mythic-scientific universes</li>
-<li>Viewers aged 16–55 who enjoy thought-provoking sci-fi</li>
-</ul>
-</div>
-
-<div class="footer">
-© Feature Film Concept by Nithin G
+  <h3>Movie Blueprint</h3>
+  <pre id="output">Waiting...</pre>
 </div>
 
 </div>
 
-<!-- Rotating Globe Script -->
 <script>
-const canvas = document.getElementById("globe");
+const steps = document.querySelectorAll(".step");
+const output = document.getElementById("output");
+const canvas = document.getElementById("sceneCanvas");
 const ctx = canvas.getContext("2d");
-let w,h,points=[];
 
-function resize(){
-  w = canvas.width = window.innerWidth;
-  h = canvas.height = window.innerHeight;
+function rand(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+
+let scenes = [];
+
+function createMovie(){
+  output.textContent="";
+  steps.forEach(s=>s.classList.remove("active"));
+  scenes=[];
+
+  const story = {
+    opening: rand([
+      "An ancient system awakens.",
+      "A forbidden technology resurfaces."
+    ]),
+    climax: rand([
+      "Time collapses inward.",
+      "One soul remains."
+    ]),
+    ending: rand([
+      "The universe rewinds.",
+      "A new reality begins."
+    ])
+  };
+
+  scenes = [
+    {light:"#1e3a8a", speed:0.3, text:"Discovery"},
+    {light:"#312e81", speed:0.6, text:"Conflict"},
+    {light:"#7c2d12", speed:1.2, text:"Collapse"},
+    {light:"#020617", speed:0.8, text:"Sacrifice"},
+    {light:"#065f46", speed:0.2, text:"Rebirth"}
+  ];
+
+  output.textContent += "STORY\n";
+  output.textContent += story.opening+"\n"+story.climax+"\n"+story.ending+"\n\n";
+
+  playScenes();
 }
-window.addEventListener("resize", resize);
-resize();
 
-const R = Math.min(w,h)/3;
-const cx = w/2;
-const cy = h/2;
+let sceneIndex = 0;
+let cameraX = 0;
 
-for(let i=0;i<500;i++){
-  const theta = Math.random()*2*Math.PI;
-  const phi = Math.acos(2*Math.random()-1);
-  points.push({theta,phi});
+function playScenes(){
+  if(sceneIndex >= scenes.length){
+    output.textContent += "\n🎉 FINAL MOVIE GENERATED";
+    return;
+  }
+
+  steps[sceneIndex].classList.add("active");
+
+  const scene = scenes[sceneIndex];
+  let frames = 0;
+
+  const interval = setInterval(()=>{
+    frames++;
+    cameraX += scene.speed;
+
+    ctx.fillStyle = scene.light;
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+
+    ctx.fillStyle = "#fff";
+    ctx.font = "24px system-ui";
+    ctx.fillText("Scene: "+scene.text, 40 + cameraX, 160);
+
+    if(frames > 120){
+      clearInterval(interval);
+      sceneIndex++;
+      cameraX = 0;
+      playScenes();
+    }
+  }, 30);
 }
-
-let rot = 0;
-
-function draw(){
-  ctx.clearRect(0,0,w,h);
-  rot += 0.0015;
-
-  points.forEach(p=>{
-    const x = R * Math.sin(p.phi) * Math.cos(p.theta + rot);
-    const y = R * Math.cos(p.phi);
-    const z = R * Math.sin(p.phi) * Math.sin(p.theta + rot);
-
-    const scale = (z+R)/(2*R);
-    const px = cx + x;
-    const py = cy + y;
-
-    ctx.fillStyle = `rgba(143,184,216,${0.15+scale*0.3})`;
-    ctx.beginPath();
-    ctx.arc(px,py,1.2,0,Math.PI*2);
-    ctx.fill();
-  });
-
-  requestAnimationFrame(draw);
-}
-draw();
 </script>
 
 </body>
-  </html>
+</html>
